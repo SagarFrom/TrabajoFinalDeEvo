@@ -49,6 +49,9 @@ public class Cliente implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "clienteidCliente")
     private List<Pedido> pedidoList;
 
+
+//El cliente contiene su codigo, nombre,tipo, contrasenia
+//Contiene metodos para obtener lista de pedidos y un codigo hash para contraseña
     public Cliente() {
     }
 
