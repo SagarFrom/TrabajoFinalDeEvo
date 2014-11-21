@@ -16,6 +16,8 @@ import pe.edu.upc.evolucion.cinemaxdac.util.CoreException;
  */
 public final  class ClienteDao extends BaseDao<Cliente> {
 
+    private final static ClienteDao CLIENTE_DAO = new ClienteDao();
+    
     public void insertar(Cliente e) throws CoreException {
         try{
             cn = obtenerConexion();
