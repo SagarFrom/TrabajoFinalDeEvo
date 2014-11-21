@@ -3,9 +3,9 @@
   <persistence-unit name="pe.edu.upc.evolucion.cinemaxdac_CinemaxDAC_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>pe.edu.upc.evolucion.cinemaxdac.entity.Pelicula</class>
-    <class>pe.edu.upc.evolucion.cinemaxdac.entity.Pedido</class>
     <class>pe.edu.upc.evolucion.cinemaxdac.entity.Ejemplar</class>
     <class>pe.edu.upc.evolucion.cinemaxdac.entity.Cliente</class>
+    <class>pe.edu.upc.evolucion.cinemaxdac.entity.Pedido</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.password" value="root"/>
