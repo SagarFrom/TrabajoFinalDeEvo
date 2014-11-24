@@ -92,4 +92,7 @@ public final  class ClienteDao extends BaseDao<Cliente> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public static ClienteDao obtenerInstancia() {
+        return CLIENTE_DAO;
+    }
 }

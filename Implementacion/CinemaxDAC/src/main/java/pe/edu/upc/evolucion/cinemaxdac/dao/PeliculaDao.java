@@ -101,5 +101,8 @@ public final class PeliculaDao extends BaseDao<Pelicula> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public static PeliculaDao obtenerInstancia() {
+        return PELIULA_DAO;
+    }
     
 }
