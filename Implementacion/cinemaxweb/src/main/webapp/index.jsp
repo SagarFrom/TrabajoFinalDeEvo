@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : 04/12/2014, 01:17:07 AM
+    Author     : Victor Moran
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +19,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head> 
+</head>
 	<body>
 		<nav class="navbar navbar-default navbar-static-top" role="navigation">
 	        <div class="container">
@@ -33,11 +40,11 @@
 		            <li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panel de Control<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
-		                <li><a href="admin-usuarios.html">Admin-Usuarios</a></li>
+		                <li><a href="admin-usuarios.jsp">Admin-Usuarios</a></li>
 		                <li><a href="admin-peliculas.html">Admin-Peliculas</a></li>
 		                <li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
-		                <li><a href="#">Admin-Tienda</a></li>
-		                <li><a href="#">Admin-Ventas</a></li>
+                                <%--<li><a href="#">Admin-Tienda</a></li>
+		                <li><a href="#">Admin-Ventas</a></li>--%>
 		              </ul>
 		            </li>
 		          </ul>

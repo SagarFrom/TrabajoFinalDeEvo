@@ -1,3 +1,11 @@
+<%-- 
+    Document   : admin-usuarios
+    Created on : 04/12/2014, 01:36:09 AM
+    Author     : Victor Moran
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Administración de los clientes</title>
@@ -26,17 +34,17 @@
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav">
-		            <li class="active"><a href="index.html">Inicio</a></li>
+		            <li class="active"><a href="index.jsp">Inicio</a></li>
 		            <li><a href="#">Notificaciones</a></li>
 		            <li><a href="#">Tienda</a></li>
 		            <li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panel de Control<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
-		                <li><a href="admin-usuarios.html">Admin-Usuarios</a></li>
-		                <li><a href="admin-peliculas.html">Admin-Películas</a></li>
+		                <li><a href="admin-usuarios.jsp">Admin-Usuarios</a></li>
+		                <%--<li><a href="admin-peliculas.html">Admin-Películas</a></li>
 		                <li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
 		                <li><a href="#">Admin-Tienda</a></li>
-		                <li><a href="#">Admin-Ventas</a></li>
+		                <li><a href="#">Admin-Ventas</a></li>--%>
 		              </ul>
 		            </li>
 		          </ul>
@@ -50,35 +58,35 @@
 
 	        	<div class="panel-body">
 		        	<ul class="nav nav-pills">
-					  <li role="presentation" class="active"><a href="admin-usuarios.html">Agregar Usuario</a></li>
+					  <li role="presentation" class="active"><a href="admin-usuarios.jsp">Agregar Usuario</a></li>
 					  <li role="presentation"><a href="#">Actualizar Usuario</a></li>
 					  <li role="presentation"><a href="#">Eliminar Usuario</a></li>
 					</ul>
 			        <h1>Agregar Usuario</h1>
 			        <p>Ingrese los datos en el formulario.</p>
-			        <form class="form-horizontal"role="form">
+                                <form class="form-horizontal"role="form" action="Controlador" method="post">
 						    <div class="form-group">
 							    <label for="Nombre" class="col-sm-2 control-label">Nombres:</label>
 							    <div class="col-sm-4">
-							    	<input type="text" class="form-control" id="Nombre" placeholder="Ingrese el nombre">
+							    	<input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre">
 							    </div>
 						    </div>
 						    <div class="form-group">
-							    <label for="Apellidos" class="col-sm-2 control-label">Apellidos:</label>
+							    <label for="Tipo" class="col-sm-2 control-label">Tipo de usuario:</label>
 							    <div class="col-sm-4">
-							    	<input type="text" class="form-control" id="Apellidos" placeholder="Ingrese el telefono">
+							    	<input type="text" class="form-control" id="tipo" placeholder="Ingrese el tipo de usuario">
 							    </div>
 						    </div>
 						    <div class="form-group">
-							    <label for="Dni" class="col-sm-2 control-label">DNI:</label>
+							    <label for="password" class="col-sm-2 control-label">Contraseña:</label>
 							    <div class="col-sm-4">
-							    	<input type="text" class="form-control" id="Direccion" placeholder="Ingrese el DNI">
+                                                                <input type="password" class="form-control" id="contrasenia1" placeholder="Ingrese la contraseña">
 							    </div>
 						    </div>
 						    <div class="form-group">
-							    <label for="Telefono" class="col-sm-2 control-label">Teléfono:</label>
+							    <label for="password" class="col-sm-2 control-label">Contraseña</label>
 							    <div class="col-sm-4">
-							    	<input type="text" class="form-control" id="Telefono" placeholder="Ingrese el Telefono">
+							    	<input type="password" class="form-control" id="contrasenia2" placeholder="Repita la contraseña">
 							    </div>
 						    </div>
 						  <button type="submit" class="btn btn-default">Agregar</button>
