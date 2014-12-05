@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="0" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="pe.edu.upc.evolucion.cinemaxcore.AppTest" duration-ms="15" started-at="2014-12-04T20:04:28Z" finished-at="2014-12-04T20:04:28Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="15" started-at="2014-12-04T20:04:28Z" finished-at="2014-12-04T20:04:28Z">
+    </test> <!-- Command line test -->
+  </suite> <!-- pe.edu.upc.evolucion.cinemaxcore.AppTest -->
+</testng-results>
