@@ -25,6 +25,17 @@ public class PeliculaBusiness implements BaseBusiness<Pelicula> {
     
     private PeliculaBusiness(){
     }
+    
+     public static PeliculaBusiness getInstance(){
+        return PeliculaBusinessHolder.INSTANCE;
+    }
+     
+     
+     private static class PeliculaBusinessHolder{
+        private static final PeliculaBusiness INSTANCE = new PeliculaBusiness();
+        private PeliculaBusinessHolder() {
+        }
+    }
 
     public Pelicula ejecutar(OperacionEnum operacionEnum, Pelicula e) throws BusinessException {
                 try{
