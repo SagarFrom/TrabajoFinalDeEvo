@@ -82,7 +82,7 @@ DELIMITER $$
 CREATE PROCEDURE `sp_pelicula_insertar`(
     IN _nombre varchar(45),
     IN _nombreDir varchar(45),
-    IN _fecha DATE,
+    IN _fecha varchar(45),
     IN _cat varchar(45),
     IN _sinapis varchar(1000)
 )

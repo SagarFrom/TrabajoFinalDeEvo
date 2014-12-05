@@ -55,16 +55,16 @@ public class servletPeliculas extends HttpServlet {
             String fecha = request.getParameter("txtFecha");
             String sinapsis = request.getParameter("txtSinapsis");
             
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            /*SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String dateInString = fecha;
-            Date date = formatter.parse(dateInString);
+            Date date = formatter.parse(dateInString);*/
             
 
             Pelicula peli = new Pelicula();
             peli.setNombre(nombre);
             peli.setNombreDirector(director);
             peli.setCategoria(categoria);
-            peli.setFecha(date);
+            peli.setFecha(fecha);
             peli.setSinapsis(sinapsis);
 
             PeliculaBusiness peliculaBS = PeliculaBusiness.obtenerEntidad();

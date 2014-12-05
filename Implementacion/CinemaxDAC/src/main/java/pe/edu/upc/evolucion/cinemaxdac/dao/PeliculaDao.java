@@ -6,7 +6,7 @@
 
 package pe.edu.upc.evolucion.cinemaxdac.dao;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import pe.edu.upc.evolucion.cinemaxdac.entity.Pelicula;
@@ -26,7 +26,7 @@ public final class PeliculaDao extends BaseDao<Pelicula> {
             cl = cn.prepareCall("{CALL sp_pelicula_insertar(?,?,?,?,?)}");
             cl.setString(1, e.getNombre());
             cl.setString(2, e.getNombre());
-            cl.setDate(3, (Date) e.getFecha());
+            cl.setString(3, e.getFecha());
             cl.setString(4, e.getCategoria());
             cl.setString(5, e.getSinapsis());
             cl.executeUpdate();
@@ -44,7 +44,7 @@ public final class PeliculaDao extends BaseDao<Pelicula> {
             cl.setInt(1, e.getIdPelicula());
             cl.setString(2, e.getNombre());
             cl.setString(3, e.getNombreDirector());
-            cl.setDate(4, (Date) e.getFecha());
+            cl.setString(4, e.getFecha());
             cl.setString(5 ,e.getCategoria());
             cl.setString(6, e.getSinapsis());
             cl.executeUpdate();
@@ -83,7 +83,7 @@ public final class PeliculaDao extends BaseDao<Pelicula> {
                 pelicula.setIdPelicula(e.getIdPelicula());
                 pelicula.setNombre(rs.getString("nombre"));
                 pelicula.setNombreDirector(rs.getString("nombreDirector"));
-                pelicula.setFecha(rs.getDate("fecha"));
+                pelicula.setFecha(rs.getString("fecha"));
                 pelicula.setCategoria(rs.getString("categoria"));
                 pelicula.setSinapsis(rs.getString("sinapsis"));
             }
