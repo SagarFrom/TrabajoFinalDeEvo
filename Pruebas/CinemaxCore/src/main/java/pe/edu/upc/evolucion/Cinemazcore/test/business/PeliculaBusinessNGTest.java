@@ -46,6 +46,19 @@ public class PeliculaBusinessNGTest {
         }
         
         @Test(priority=2)
+        public void testActualizar() throws Exception {
+            pelicula = new Pelicula();
+            pelicula.setIdPelicula(1);
+            try {
+                
+                PeliculaBusiness.getInstance().ejecutar(OperacionEnum.ELIMINAR,pelicula);
+                Assert.assertTrue(pelicula.getIdPelicula().equals(-1) == false);
+            } catch(Exception ex) { 
+                Assert.fail(ex.getMessage());
+            }
+        }
+        
+        @Test(priority=3)
         public void testEliminar() throws Exception {
             pelicula = new Pelicula();
             pelicula.setIdPelicula(1);
