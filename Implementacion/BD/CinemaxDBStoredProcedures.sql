@@ -89,7 +89,7 @@ CREATE PROCEDURE `sp_pelicula_insertar`(
 BEGIN
 
     INSERT INTO pelicula(nombre, nombreDirector, fecha, categoria, sinapsis)
-    VALUES(_nombre,_nombreDir,_fecha,_cat,_sinapsis);
+    VALUES(_nombre,_nombreDir,_fecha,_cat,_sinapis);
 END
 
 -- --------------------------------------------------------------------------------

@@ -1,10 +1,13 @@
 <%-- 
-    Document   : admin-usuarios
-    Created on : 04/12/2014, 01:36:09 AM
+    Document   : actua-usuario
+    Created on : 04/12/2014, 10:08:58 PM
     Author     : Victor Moran
 --%>
 
+<%@page import="pe.edu.upc.evolucion.cinemaxcore.base.OperacionEnum"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="pe.edu.upc.evolucion.cinemaxdac.entity.Cliente" %>
+<%@page import="pe.edu.upc.evolucion.cinemaxcore.business.ClienteBusiness" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,9 +65,9 @@
                                           <li role="presentation"><a href="actua-usuario.jsp">Obtener Usuario</a></li>
 					  <li role="presentation"><a href="elimina-usuario.jsp">Eliminar Usuario</a></li>
 					</ul>
-			        <h1>Agregar Usuario</h1>
+			        <h1>Obtener Usuario</h1>
 			        <p>Ingrese los datos en el formulario.</p>
-                                <form class="form-horizontal"role="form" action="Controlador" method="post">
+                                <form class="form-horizontal"role="form" action="ObtenerUsuario" method="post">
                                     
                                                     <div class="form-group">
 							    <label for="Codigo" class="col-sm-2 control-label">Código:</label>
@@ -72,31 +75,7 @@
                                                                 <input type="text" class="form-control" id="nombre" name="txtCodigo" placeholder="">
 							    </div>
 						    </div>
-						    <div class="form-group">
-							    <label for="Nombre" class="col-sm-2 control-label">Nombres:</label>
-							    <div class="col-sm-4">
-                                                                <input type="text" class="form-control" id="nombre" name="txtNombre" placeholder="Ingrese el nombre">
-							    </div>
-						    </div>
-						    <div class="form-group">
-							    <label for="Tipo" class="col-sm-2 control-label">Tipo de usuario:</label>
-							    <div class="col-sm-4">
-                                                                <input type="text" class="form-control" id="tipo" name="txtTipo" placeholder="Ingrese el tipo de usuario">
-							    </div>
-						    </div>
-						    <div class="form-group">
-							    <label for="password" class="col-sm-2 control-label">Contraseña:</label>
-							    <div class="col-sm-4">
-                                                                <input type="password" class="form-control" id="contrasenia1" name="txtCon1" placeholder="Ingrese la contraseña">
-							    </div>
-						    </div>
-						    <div class="form-group">
-							    <label for="password" class="col-sm-2 control-label">Contraseña</label>
-							    <div class="col-sm-4">
-                                                                <input type="password" class="form-control" id="contrasenia2" name="txtCon2" placeholder="Repita la contraseña">
-							    </div>
-						    </div>
-						  <button type="submit" class="btn btn-default">Agregar</button>
+						  <button type="submit" class="btn btn-default">Obtener</button>
 					</form>
 				</div>
 	        </div>
