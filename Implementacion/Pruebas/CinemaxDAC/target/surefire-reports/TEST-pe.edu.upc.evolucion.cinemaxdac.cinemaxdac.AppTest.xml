@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.125" errors="0" skipped="0" tests="1" name="pe.edu.upc.evolucion.cinemaxdac.cinemaxdac.AppTest">
+<testsuite failures="0" time="2.672" errors="0" skipped="0" tests="0" name="pe.edu.upc.evolucion.cinemaxdac.cinemaxdac.AppTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_67\jre\bin"/>
@@ -30,7 +30,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.0\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans 8.0\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_67\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Centura;c:\ORANT\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;c:\ORANT\jdk\bin;C:\Program Files\Java\jdk1.7.0_67\bin;C:\ProgramasInstalados\apache-maven-3.2.3\bin;C:\ProgramasInstalados\IEDriverServer_Win32_2.43.0;C:\Program Files\VisualSVN Server\bin;C:\wamp\bin\mysql\mysql5.6.12\bin;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_67\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Centura;c:\ORANT\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;c:\ORANT\jdk\bin;C:\Program Files\Java\jdk1.7.0_67\bin;C:\ProgramasInstalados\apache-maven-3.2.3\bin;C:\ProgramasInstalados\IEDriverServer_Win32_2.43.0;C:\Program Files\VisualSVN Server\bin;C:\wamp\bin\mysql\mysql5.6.12\bin;C:\Program Files\Java\jre7\bin;C:\Program Files\Git\bin;C:\Program Files\Java\jdk1.7.0_67\bin;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
@@ -63,5 +63,4 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0" classname="pe.edu.upc.evolucion.cinemaxdac.cinemaxdac.AppTest" name="testApp"/>
 </testsuite>

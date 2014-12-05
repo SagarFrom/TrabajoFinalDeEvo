@@ -25,7 +25,18 @@ public class ClienteBusiness implements BaseBusiness<Cliente> {
 
     private ClienteBusiness() {
     }
-        
+
+    public static ClienteBusiness getInstance(){
+        return ClienteBusinessHolder.INSTANCE;
+    }
+    
+    
+     private static class ClienteBusinessHolder{
+        private static final ClienteBusiness INSTANCE = new ClienteBusiness();
+        private ClienteBusinessHolder() {
+        }
+    }
+            
     public Cliente ejecutar(OperacionEnum operacionEnum, Cliente e) throws BusinessException {
         
         try{
