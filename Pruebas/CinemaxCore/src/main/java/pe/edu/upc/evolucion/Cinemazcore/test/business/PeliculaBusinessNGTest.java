@@ -50,6 +50,10 @@ public class PeliculaBusinessNGTest {
             pelicula = new Pelicula();
             pelicula.setIdPelicula(1);
             try {
+                pelicula = PeliculaBusiness.getInstance().ejecutar(OperacionEnum.OBTENER, pelicula);
+                pelicula.setCategoria("Drama");
+                pelicula.setNombreDirector("Juan");
+                pelicula.setNombre("El Juez");
                 
                 PeliculaBusiness.getInstance().ejecutar(OperacionEnum.ELIMINAR,pelicula);
                 Assert.assertTrue(pelicula.getIdPelicula().equals(-1) == false);
