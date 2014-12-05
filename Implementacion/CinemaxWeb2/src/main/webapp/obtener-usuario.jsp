@@ -20,9 +20,10 @@
                 producto = pb.ejecutar(OperacionEnum.OBTENER, 
                         new Cliente(Integer.parseInt(request.getParameter("id"))));
                 if(producto == null)
-                    response.sendRedirect("actua-usuario");
+                    response.sendRedirect("actua-usuario.jsp");
                 mostrar = true;
             }catch(Exception e){
+                response.sendRedirect("actua-usuario.jsp");
                  /* String[] errores = UtilWeb.getMessageExceptionPrintAop(e,e.getMessage());
                   mensaje = UtilWeb.codigoError(errores[0]);
                   LOG.error(errores[1]);*/
