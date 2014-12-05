@@ -1,11 +1,38 @@
 <%-- 
-    Document   : admin-usuarios
-    Created on : 04/12/2014, 01:36:09 AM
+    Document   : obtener-usuario
+    Created on : 04/12/2014, 11:16:15 PM
     Author     : Victor Moran
 --%>
 
+<%@page import="pe.edu.upc.evolucion.cinemaxcore.base.OperacionEnum"%>
+<%@page import="pe.edu.upc.evolucion.cinemaxcore.business.ClienteBusiness"%>
+<%@page import="pe.edu.upc.evolucion.cinemaxdac.entity.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+        String mensaje="";
+        boolean mostrar = false;
+        Cliente producto = null;
+        if(request.getParameter("id")!=null){
+            try{
+                ClienteBusiness pb = ClienteBusiness.obtenerEntidad();
+                producto = pb.ejecutar(OperacionEnum.OBTENER, 
+                        new Cliente(Integer.parseInt(request.getParameter("id"))));
+                if(producto == null)
+                    response.sendRedirect("actua-usuario.jsp");
+                mostrar = true;
+            }catch(Exception e){
+                response.sendRedirect("actua-usuario.jsp");
+                 /* String[] errores = UtilWeb.getMessageExceptionPrintAop(e,e.getMessage());
+                  mensaje = UtilWeb.codigoError(errores[0]);
+                  LOG.error(errores[1]);*/
+            }
+            finally{
+                
+            }
+        }
+%>
 <html>
 <head>
 <title>Administración de los clientes</title>
@@ -30,7 +57,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="index.html">TB - SI184</a>
+		          <a class="navbar-brand" href="index.jsp">TB - SI184</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav">
@@ -59,44 +86,44 @@
 	        	<div class="panel-body">
 		        	<ul class="nav nav-pills">
 					  <li role="presentation" class="active"><a href="admin-usuarios.jsp">Agregar Usuario</a></li>
-                                          <li role="presentation"><a href="actua-usuario.jsp">Obtener Usuario</a></li>
+                                          <li role="presentation"><a href="actua-usuario.jsp">Obtener y Actualizar Usuario</a></li>
 					  <li role="presentation"><a href="elimina-usuario.jsp">Eliminar Usuario</a></li>
 					</ul>
-			        <h1>Agregar Usuario</h1>
+			        <h1>Actualizar Usuario</h1>
 			        <p>Ingrese los datos en el formulario.</p>
-                                <form class="form-horizontal"role="form" action="Controlador" method="post">
+                                <form class="form-horizontal"role="form" action="ActualizarUsuario" method="post">
                                     
                                                     <div class="form-group">
 							    <label for="Codigo" class="col-sm-2 control-label">Código:</label>
 							    <div class="col-sm-4">
-                                                                <input type="text" class="form-control" id="nombre" name="txtCodigo" placeholder="">
+                                                                <input type="text" class="form-control" id="nombre" name="txtCodigo" value="<%= request.getParameter("id") %>" readonly="true">
 							    </div>
 						    </div>
-						    <div class="form-group">
+                                                    <div class="form-group">
 							    <label for="Nombre" class="col-sm-2 control-label">Nombres:</label>
 							    <div class="col-sm-4">
-                                                                <input type="text" class="form-control" id="nombre" name="txtNombre" placeholder="Ingrese el nombre">
+                                                                <input type="text" class="form-control" id="nombre" name="txtNombre" value="<%= producto.getNombre() %>">
 							    </div>
-						    </div>
-						    <div class="form-group">
-							    <label for="Tipo" class="col-sm-2 control-label">Tipo de usuario:</label>
+                                                    </div>
+                                                    <div class="form-group">
+							    <label for="Tipo" class="col-sm-2 control-label">Tipo:</label>
 							    <div class="col-sm-4">
-                                                                <input type="text" class="form-control" id="tipo" name="txtTipo" placeholder="Ingrese el tipo de usuario">
+                                                                <input type="text" class="form-control" id="nombre" name="txtTipo" value="<%= producto.getTipo() %>">
 							    </div>
-						    </div>
-						    <div class="form-group">
+                                                    </div>
+                                                    <div class="form-group">
 							    <label for="password" class="col-sm-2 control-label">Contraseña:</label>
 							    <div class="col-sm-4">
-                                                                <input type="password" class="form-control" id="contrasenia1" name="txtCon1" placeholder="Ingrese la contraseña">
+                                                                <input type="password" class="form-control" id="contrasenia1" name="txtCon1" value="<%= producto.getContrasenia()%>">
 							    </div>
 						    </div>
 						    <div class="form-group">
 							    <label for="password" class="col-sm-2 control-label">Contraseña</label>
 							    <div class="col-sm-4">
-                                                                <input type="password" class="form-control" id="contrasenia2" name="txtCon2" placeholder="Repita la contraseña">
+                                                                <input type="password" class="form-control" id="contrasenia2" name="txtCon2" value="<%= producto.getContrasenia()%>">
 							    </div>
 						    </div>
-						  <button type="submit" class="btn btn-default">Agregar</button>
+						  <button type="submit" class="btn btn-default">Actualizar</button>
 					</form>
 				</div>
 	        </div>
@@ -104,3 +131,4 @@
 	    </div>
 	</body>
 </html>
+

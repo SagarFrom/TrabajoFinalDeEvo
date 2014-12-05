@@ -1,6 +1,6 @@
 <%-- 
-    Document   : admin-usuarios
-    Created on : 04/12/2014, 01:36:09 AM
+    Document   : elimina-usuario
+    Created on : 04/12/2014, 10:09:27 PM
     Author     : Victor Moran
 --%>
 
@@ -30,7 +30,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="index.html">TB - SI184</a>
+		          <a class="navbar-brand" href="index.jsp">TB - SI184</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav">
@@ -41,8 +41,8 @@
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panel de Control<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
 		                <li><a href="admin-usuarios.jsp">Admin-Usuarios</a></li>
-		                <li><a href="admin-peliculas.jsp">Admin-Películas</a></li>
-		                <%--<li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
+		                <%--<li><a href="admin-peliculas.html">Admin-Películas</a></li>
+		                <li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
 		                <li><a href="#">Admin-Tienda</a></li>
 		                <li><a href="#">Admin-Ventas</a></li>--%>
 		              </ul>
@@ -62,9 +62,9 @@
                                           <li role="presentation"><a href="actua-usuario.jsp">Obtener Usuario</a></li>
 					  <li role="presentation"><a href="elimina-usuario.jsp">Eliminar Usuario</a></li>
 					</ul>
-			        <h1>Agregar Usuario</h1>
+			        <h1>Eliminar Usuario</h1>
 			        <p>Ingrese los datos en el formulario.</p>
-                                <form class="form-horizontal"role="form" action="Controlador" method="post">
+                                <form class="form-horizontal"role="form" action="BuscarEliminar" method="post">
                                     
                                                     <div class="form-group">
 							    <label for="Codigo" class="col-sm-2 control-label">Código:</label>
@@ -72,31 +72,7 @@
                                                                 <input type="text" class="form-control" id="nombre" name="txtCodigo" placeholder="">
 							    </div>
 						    </div>
-						    <div class="form-group">
-							    <label for="Nombre" class="col-sm-2 control-label">Nombres:</label>
-							    <div class="col-sm-4">
-                                                                <input type="text" class="form-control" id="nombre" name="txtNombre" placeholder="Ingrese el nombre">
-							    </div>
-						    </div>
-						    <div class="form-group">
-							    <label for="Tipo" class="col-sm-2 control-label">Tipo de usuario:</label>
-							    <div class="col-sm-4">
-                                                                <input type="text" class="form-control" id="tipo" name="txtTipo" placeholder="Ingrese el tipo de usuario">
-							    </div>
-						    </div>
-						    <div class="form-group">
-							    <label for="password" class="col-sm-2 control-label">Contraseña:</label>
-							    <div class="col-sm-4">
-                                                                <input type="password" class="form-control" id="contrasenia1" name="txtCon1" placeholder="Ingrese la contraseña">
-							    </div>
-						    </div>
-						    <div class="form-group">
-							    <label for="password" class="col-sm-2 control-label">Contraseña</label>
-							    <div class="col-sm-4">
-                                                                <input type="password" class="form-control" id="contrasenia2" name="txtCon2" placeholder="Repita la contraseña">
-							    </div>
-						    </div>
-						  <button type="submit" class="btn btn-default">Agregar</button>
+						  <button type="submit" class="btn btn-default">Buscar</button>
 					</form>
 				</div>
 	        </div>
@@ -104,3 +80,4 @@
 	    </div>
 	</body>
 </html>
+

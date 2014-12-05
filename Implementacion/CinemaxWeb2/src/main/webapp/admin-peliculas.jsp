@@ -30,7 +30,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="index.html">TB - SI184</a>
+		          <a class="navbar-brand" href="index.jsp">TB - SI184</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav">
@@ -42,9 +42,9 @@
 		              <ul class="dropdown-menu" role="menu">
 		                <li><a href="admin-usuarios.html">Admin-Usuarios</a></li>
 		                <li><a href="admin-peliculas.html">Admin-Películas</a></li>
-		                <li><a href="buscador-peliculas.html">Buscardor-Películas</a></li>
+                                <%--<li><a href="buscador-peliculas.html">Buscardor-Películas</a></li>
 		                <li><a href="#">Admin-Tienda</a></li>
-		                <li><a href="#">Admin-Ventas</a></li>
+                                <li><a href="#">Admin-Ventas</a></li>--%>
 		              </ul>
 		            </li>
 		          </ul>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : registrocliente
-    Created on : 04/12/2014, 08:03:27 PM
+    Document   : actualizarcliente
+    Created on : 05/12/2014, 01:04:29 AM
     Author     : Victor Moran
 --%>
 
@@ -41,7 +41,7 @@
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panel de Control<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
 		                <li><a href="admin-usuarios.jsp">Admin-Usuarios</a></li>
-		                <li><a href="admin-peliculas.html">Admin-Peliculas</a></li>
+		                <li><a href="admin-peliculas.jsp">Admin-Peliculas</a></li>
 		                <%--<li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
                                 <li><a href="#">Admin-Tienda</a></li>
 		                <li><a href="#">Admin-Ventas</a></li>--%>
@@ -57,8 +57,8 @@
 	        <div class="panel panel-default">
 	        	<div class="jumbotron">
 
-			        <form class="form-horizontal"role="form" action="Regresar" method="post">
-			        <p>Cliente agregado correctamente</p>
+			        <form class="form-horizontal"role="form" action="RegresarActualizar" method="post">
+			        <p>Cliente actualizado correctamente</p>
                                 <button type="submit" class="btn btn-default">Regresar</button>
                                 </form>
 				</div>
@@ -67,4 +67,5 @@
 	    </div>
 	</body>
 </html>
+
 
