@@ -83,8 +83,14 @@
 							    	<input name="txtCategoria" type="text" class="form-control" id="categoria" placeholder="Ingrese la Categoria">
 							    </div>
 						    </div>
+                                                    <div class="form-group">
+							    <label for="Estreno" class="col-sm-2 control-label">Fecha Estreno</label>
+							    <div class="col-sm-4">
+							    	<input name="txtFecha" type="text" class="form-control" id="fecha" placeholder="dd/MM/yyyy">
+							    </div>
+						    </div>
 						    <div class="form-group">
-							    <label for="Idioma" class="col-sm-2 control-label">Sinapsis:</label>
+							    <label for="Sinapsis" class="col-sm-2 control-label">Sinapsis:</label>
 							    <div class="col-sm-4">
                                                                 <textarea name="txtSinapsis" class="form-control"></textarea>
 							    </div>
