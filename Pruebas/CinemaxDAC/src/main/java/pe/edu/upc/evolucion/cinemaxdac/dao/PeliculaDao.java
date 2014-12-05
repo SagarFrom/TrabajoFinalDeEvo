@@ -26,7 +26,7 @@ public final class PeliculaDao extends BaseDao<Pelicula> {
             cl = cn.prepareCall("{CALL sp_pelicula_insertar(?,?,?,?,?)}");
             cl.setString(1, e.getNombre());
             cl.setString(2, e.getNombre());
-            cl.setDate(3, (Date) e.getFecha());
+            cl.setDate(3, null);
             cl.setString(4, e.getCategoria());
             cl.setString(5, e.getSinapsis());
             cl.executeUpdate();
@@ -44,7 +44,7 @@ public final class PeliculaDao extends BaseDao<Pelicula> {
             cl.setInt(1, e.getIdPelicula());
             cl.setString(2, e.getNombre());
             cl.setString(3, e.getNombreDirector());
-            cl.setDate(4, (Date) e.getFecha());
+            cl.setDate(4, null);
             cl.setString(5 ,e.getCategoria());
             cl.setString(6, e.getSinapsis());
             cl.executeUpdate();
