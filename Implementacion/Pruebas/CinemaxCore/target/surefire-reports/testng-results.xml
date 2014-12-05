@@ -2,10 +2,10 @@
 <testng-results skipped="0" failed="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="pe.edu.upc.evolucion.cinemaxcore.AppTest" duration-ms="15" started-at="2014-12-04T20:04:28Z" finished-at="2014-12-04T20:04:28Z">
+  <suite name="pe.edu.upc.evolucion.cinemaxcore.AppTest" duration-ms="16" started-at="2014-12-05T03:33:59Z" finished-at="2014-12-05T03:34:00Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="15" started-at="2014-12-04T20:04:28Z" finished-at="2014-12-04T20:04:28Z">
+    <test name="Command line test" duration-ms="16" started-at="2014-12-05T03:33:59Z" finished-at="2014-12-05T03:34:00Z">
     </test> <!-- Command line test -->
   </suite> <!-- pe.edu.upc.evolucion.cinemaxcore.AppTest -->
 </testng-results>
