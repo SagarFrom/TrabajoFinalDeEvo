@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -37,23 +42,29 @@ public class servletPeliculas extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, ParseException {
 
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter(); 
         String direccion = "error.jsp";
         try {
 
-            String nombre = request.getParameter("txtNombre");
+            String nombre = request.getParameter("txtNomPel");
             String director = request.getParameter("txtDirector");
             String categoria = request.getParameter("txtCategoria");
+            String fecha = request.getParameter("txtFecha");
             String sinapsis = request.getParameter("txtSinapsis");
+            
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            String dateInString = fecha;
+            Date date = formatter.parse(dateInString);
             
 
             Pelicula peli = new Pelicula();
             peli.setNombre(nombre);
             peli.setNombreDirector(director);
             peli.setCategoria(categoria);
+            peli.setFecha(date);
             peli.setSinapsis(sinapsis);
 
             PeliculaBusiness peliculaBS = PeliculaBusiness.obtenerEntidad();
@@ -83,7 +94,11 @@ public class servletPeliculas extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(servletPeliculas.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -97,7 +112,11 @@ public class servletPeliculas extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(servletPeliculas.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
