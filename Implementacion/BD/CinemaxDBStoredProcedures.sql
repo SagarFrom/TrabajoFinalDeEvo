@@ -84,7 +84,7 @@ CREATE PROCEDURE `sp_pelicula_insertar`(
     IN _nombreDir varchar(45),
     IN _fecha DATE,
     IN _cat varchar(45),
-    IN _sinap varchar(1000)
+    IN _sinapis varchar(1000)
 )
 BEGIN
 
