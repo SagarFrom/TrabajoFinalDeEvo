@@ -40,5 +40,17 @@ public class ClienteBusinessNGTest {
             } catch(Exception ex) { 
                 Assert.fail(ex.getMessage());
             }
-    }
+        }
+        
+        @Test(priority = 2)
+        public void testEliminar() throws Exception {
+            cliente = new Cliente();
+            cliente.setNombre("Franco");
+            try {
+                ClienteBusiness.getInstance().ejecutar(OperacionEnum.ELIMINAR,cliente);
+                Assert.assertTrue(cliente.getIdCliente().equals(-1) == false);
+            } catch(Exception ex) { 
+                Assert.fail(ex.getMessage());
+            }
+        }
 }
