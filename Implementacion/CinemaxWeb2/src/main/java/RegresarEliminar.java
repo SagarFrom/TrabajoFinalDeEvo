@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Victor Moran
  */
-@WebServlet(urlPatterns = {"/RegresarActualizar"})
-public class RegresarActualizar extends HttpServlet {
+@WebServlet(urlPatterns = {"/RegresarEliminar"})
+public class RegresarEliminar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,7 +33,7 @@ public class RegresarActualizar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            response.sendRedirect("actua-usuario.jsp");
+            response.sendRedirect("elimina-usuario.jsp");
         } finally {
             out.close();
         }

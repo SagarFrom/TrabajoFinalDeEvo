@@ -19,11 +19,16 @@
                 ClienteBusiness pb = ClienteBusiness.obtenerEntidad();
                 producto = pb.ejecutar(OperacionEnum.OBTENER, 
                         new Cliente(Integer.parseInt(request.getParameter("id"))));
+                if(producto == null)
+                    response.sendRedirect("actua-usuario");
                 mostrar = true;
             }catch(Exception e){
                  /* String[] errores = UtilWeb.getMessageExceptionPrintAop(e,e.getMessage());
                   mensaje = UtilWeb.codigoError(errores[0]);
                   LOG.error(errores[1]);*/
+            }
+            finally{
+                
             }
         }
 %>
@@ -51,7 +56,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="index.html">TB - SI184</a>
+		          <a class="navbar-brand" href="index.jsp">TB - SI184</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav">
@@ -62,8 +67,8 @@
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panel de Control<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
 		                <li><a href="admin-usuarios.jsp">Admin-Usuarios</a></li>
-		                <%--<li><a href="admin-peliculas.html">Admin-Películas</a></li>
-		                <li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
+		                <li><a href="admin-peliculas.jsp">Admin-Películas</a></li>
+		                <%--<li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
 		                <li><a href="#">Admin-Tienda</a></li>
 		                <li><a href="#">Admin-Ventas</a></li>--%>
 		              </ul>
@@ -90,7 +95,7 @@
                                                     <div class="form-group">
 							    <label for="Codigo" class="col-sm-2 control-label">Código:</label>
 							    <div class="col-sm-4">
-                                                                <input type="text" class="form-control" id="nombre" name="txtCodigo" value="<%= request.getParameter("id") %>">
+                                                                <input type="text" class="form-control" id="nombre" name="txtCodigo" value="<%= request.getParameter("id") %>" readonly="true">
 							    </div>
 						    </div>
                                                     <div class="form-group">

@@ -30,11 +30,11 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="index.html">TB - SI184</a>
+		          <a class="navbar-brand" href="index.jsp">TB - SI184</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav">
-		            <li class="active"><a href="index.html">Inicio</a></li>
+		            <li class="active"><a href="index.jsp">Inicio</a></li>
 		            <li><a href="#">Notificaciones</a></li>
 		            <li><a href="#">Tienda</a></li>
 		            <li class="dropdown">
@@ -42,8 +42,8 @@
 		              <ul class="dropdown-menu" role="menu">
 		                <li><a href="admin-usuarios.jsp">Admin-Usuarios</a></li>
 		                <li><a href="admin-peliculas.jsp">Admin-Peliculas</a></li>
-		                <li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
-                                <%--<li><a href="#">Admin-Tienda</a></li>
+		                <%--<li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
+                                <li><a href="#">Admin-Tienda</a></li>
 		                <li><a href="#">Admin-Ventas</a></li>--%>
 		              </ul>
 		            </li>

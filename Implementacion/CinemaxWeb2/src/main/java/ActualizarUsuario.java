@@ -58,7 +58,7 @@ public class ActualizarUsuario extends HttpServlet {
             ClienteBusiness cb = ClienteBusiness.obtenerEntidad();
             cb.ejecutar(OperacionEnum.GUARDAR, cliente);
             
-            response.sendRedirect("actualizarcliente");
+            response.sendRedirect("actualizarcliente.jsp");
         } finally {
             out.close();
         }

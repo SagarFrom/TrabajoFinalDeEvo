@@ -1,17 +1,14 @@
 <%-- 
-    Document   : actua-usuario
-    Created on : 04/12/2014, 10:08:58 PM
+    Document   : eliminarusuario
+    Created on : 05/12/2014, 02:04:32 AM
     Author     : Victor Moran
 --%>
 
-<%@page import="pe.edu.upc.evolucion.cinemaxcore.base.OperacionEnum"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="pe.edu.upc.evolucion.cinemaxdac.entity.Cliente" %>
-<%@page import="pe.edu.upc.evolucion.cinemaxcore.business.ClienteBusiness" %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Administración de los clientes</title>
+<title>Inicio - Peliculas</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -44,9 +41,9 @@
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panel de Control<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
 		                <li><a href="admin-usuarios.jsp">Admin-Usuarios</a></li>
-		                <li><a href="admin-peliculas.html">Admin-Películas</a></li>
+		                <li><a href="admin-peliculas.jsp">Admin-Peliculas</a></li>
 		                <%--<li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
-		                <li><a href="#">Admin-Tienda</a></li>
+                                <li><a href="#">Admin-Tienda</a></li>
 		                <li><a href="#">Admin-Ventas</a></li>--%>
 		              </ul>
 		            </li>
@@ -58,25 +55,12 @@
 
 	        <!-- Main component for a primary marketing message or call to action -->
 	        <div class="panel panel-default">
+	        	<div class="jumbotron">
 
-	        	<div class="panel-body">
-		        	<ul class="nav nav-pills">
-					  <li role="presentation" class="active"><a href="admin-usuarios.jsp">Agregar Usuario</a></li>
-                                          <li role="presentation"><a href="actua-usuario.jsp">Obtener Usuario</a></li>
-					  <li role="presentation"><a href="elimina-usuario.jsp">Eliminar Usuario</a></li>
-					</ul>
-			        <h1>Obtener Usuario</h1>
-			        <p>Ingrese los datos en el formulario.</p>
-                                <form class="form-horizontal"role="form" action="ObtenerUsuario" method="post">
-                                    
-                                                    <div class="form-group">
-							    <label for="Codigo" class="col-sm-2 control-label">Código:</label>
-							    <div class="col-sm-4">
-                                                                <input type="text" class="form-control" id="nombre" name="txtCodigo" placeholder="">
-							    </div>
-						    </div>
-						  <button type="submit" class="btn btn-default">Obtener</button>
-					</form>
+			        <form class="form-horizontal"role="form" action="RegresarEliminar" method="post">
+			        <p>Cliente eliminado correctamente</p>
+                                <button type="submit" class="btn btn-default">Regresar</button>
+                                </form>
 				</div>
 	        </div>
 

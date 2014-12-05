@@ -41,8 +41,8 @@
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panel de Control<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
 		                <li><a href="admin-usuarios.jsp">Admin-Usuarios</a></li>
-		                <%--<li><a href="admin-peliculas.html">Admin-Películas</a></li>
-		                <li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
+		                <li><a href="admin-peliculas.jsp">Admin-Películas</a></li>
+		                <%--<li><a href="buscador-peliculas.html">Buscardor-Peliculas</a></li>
 		                <li><a href="#">Admin-Tienda</a></li>
 		                <li><a href="#">Admin-Ventas</a></li>--%>
 		              </ul>
