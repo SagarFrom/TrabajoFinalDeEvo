@@ -48,8 +48,7 @@ public class PeliculaBusinessNGTest {
         @Test(priority=2)
         public void testEliminar() throws Exception {
             pelicula = new Pelicula();
-            pelicula.setNombre("El Juez");
-            
+            pelicula.setIdPelicula(1);
             try {
                 PeliculaBusiness.getInstance().ejecutar(OperacionEnum.ELIMINAR,pelicula);
                 Assert.assertTrue(pelicula.getIdPelicula().equals(-1) == false);

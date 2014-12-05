@@ -20,12 +20,12 @@ public class ClienteBusinessNGTest {
      
         @BeforeClass
         public static void setUpClass() throws Exception{
-            System.out.println("Inicio Test ChofefrBusiness");
+            System.out.println("Inicio Test ClientefrBusiness");
         }
         
         @AfterClass
         public static void tearDownClass() throws Exception {
-            System.out.println("Fin Test ChoferBusiness");
+            System.out.println("Fin Test ClienteBusiness");
         }
         
         @Test(priority=1)
@@ -45,7 +45,8 @@ public class ClienteBusinessNGTest {
         @Test(priority = 2)
         public void testEliminar() throws Exception {
             cliente = new Cliente();
-            cliente.setNombre("Franco");
+            cliente.setIdCliente(1);
+            
             try {
                 ClienteBusiness.getInstance().ejecutar(OperacionEnum.ELIMINAR,cliente);
                 Assert.assertTrue(cliente.getIdCliente().equals(-1) == false);
