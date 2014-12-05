@@ -44,4 +44,17 @@ public class PeliculaBusinessNGTest {
                 Assert.fail(ex.getMessage());
             }
         }
+        
+        @Test(priority=2)
+        public void testEliminar() throws Exception {
+            pelicula = new Pelicula();
+            pelicula.setNombre("El Juez");
+            
+            try {
+                PeliculaBusiness.getInstance().ejecutar(OperacionEnum.ELIMINAR,pelicula);
+                Assert.assertTrue(pelicula.getIdPelicula().equals(-1) == false);
+            } catch(Exception ex) { 
+                Assert.fail(ex.getMessage());
+            }
+        }
 }
