@@ -5,10 +5,14 @@
  */
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import pe.edu.upc.evolucion.cinemaxcore.base.BusinessException;
 import pe.edu.upc.evolucion.cinemaxcore.base.OperacionEnum;
 import pe.edu.upc.evolucion.cinemaxcore.business.ClienteBusiness;
 import pe.edu.upc.evolucion.cinemaxcore.business.PeliculaBusiness;
@@ -18,7 +22,10 @@ import pe.edu.upc.evolucion.cinemaxdac.entity.Pelicula;
  *
  * @author Miguel
  */
+@WebServlet(urlPatterns = {"/servletPeliculas"})
 public class servletPeliculas extends HttpServlet {
+
+    private final PeliculaBusiness peliculaBS = PeliculaBusiness.obtenerEntidad();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,29 +38,37 @@ public class servletPeliculas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nombre = request.getParameter("txtNombre");
-        String director = request.getParameter("txtDirector");
-        String categoria = request.getParameter("txtCategoria");
-        String sinapsis = request.getParameter("txtSinapsis");
-        String direccion="error.jsp";
-        
-        try{
+
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter(); 
+        String direccion = "error.jsp";
+        try {
+
+            String nombre = request.getParameter("txtNombre");
+            String director = request.getParameter("txtDirector");
+            String categoria = request.getParameter("txtCategoria");
+            String sinapsis = request.getParameter("txtSinapsis");
+            
+
             Pelicula peli = new Pelicula();
             peli.setNombre(nombre);
             peli.setNombreDirector(director);
             peli.setCategoria(categoria);
             peli.setSinapsis(sinapsis);
-            
-            PeliculaBusiness peliBusi = PeliculaBusiness.obtenerEntidad();
-            peliBusi.ejecutar(OperacionEnum.GUARDAR, peli);
-            
-            direccion="index.jsp";
-            
-        }catch(Exception ex){
-            ex.printStackTrace();
+
+            PeliculaBusiness peliculaBS = PeliculaBusiness.obtenerEntidad();
+            peliculaBS.ejecutar(OperacionEnum.GUARDAR, peli);
+
+            direccion = "admin-peliculas.jsp";
+            response.sendRedirect(direccion);
+
+        } catch (BusinessException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            out.close();
         }
+
         
-        response.sendRedirect(direccion);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
