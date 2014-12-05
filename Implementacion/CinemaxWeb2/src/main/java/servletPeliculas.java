@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
@@ -16,17 +15,18 @@ import javax.servlet.http.HttpServletResponse;
 import pe.edu.upc.evolucion.cinemaxcore.base.BusinessException;
 import pe.edu.upc.evolucion.cinemaxcore.base.OperacionEnum;
 import pe.edu.upc.evolucion.cinemaxcore.business.ClienteBusiness;
-import pe.edu.upc.evolucion.cinemaxdac.dao.ClienteDao;
-import pe.edu.upc.evolucion.cinemaxdac.entity.Cliente;
+import pe.edu.upc.evolucion.cinemaxcore.business.PeliculaBusiness;
+import pe.edu.upc.evolucion.cinemaxdac.entity.Pelicula;
 
 /**
  *
- * @author Victor Moran
+ * @author Miguel
  */
-@WebServlet(urlPatterns = {"/Controlador"})
-public class Controlador extends HttpServlet {
+@WebServlet(urlPatterns = {"/servletPeliculas"})
+public class servletPeliculas extends HttpServlet {
 
-    private final ClienteBusiness clienteBS = ClienteBusiness.obtenerEntidad();
+    private final PeliculaBusiness peliculaBS = PeliculaBusiness.obtenerEntidad();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,33 +38,37 @@ public class Controlador extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        PrintWriter out = response.getWriter(); 
+        String direccion = "error.jsp";
         try {
-           
+
             String nombre = request.getParameter("txtNombre");
-            String tipo = request.getParameter("txtTipo");
-            String con1 = request.getParameter("txtCon1");
-            String con2 = request.getParameter("txtCon2");
+            String director = request.getParameter("txtDirector");
+            String categoria = request.getParameter("txtCategoria");
+            String sinapsis = request.getParameter("txtSinapsis");
             
-            if(!con1.equals(con2))
-                response.sendRedirect("admin-usuarios.jsp");
-            
-            Cliente cliente = new Cliente();
-            cliente.setNombre(nombre);
-            cliente.setTipo(tipo);
-            cliente.setContrasenia(con1);
-            
-            ClienteBusiness clienteBS = ClienteBusiness.obtenerEntidad();
-            clienteBS.ejecutar(OperacionEnum.GUARDAR, cliente);
-            //if(cliente.getIdCliente()!=null)
-            response.sendRedirect("registrocliente.jsp");
-            
+
+            Pelicula peli = new Pelicula();
+            peli.setNombre(nombre);
+            peli.setNombreDirector(director);
+            peli.setCategoria(categoria);
+            peli.setSinapsis(sinapsis);
+
+            PeliculaBusiness peliculaBS = PeliculaBusiness.obtenerEntidad();
+            peliculaBS.ejecutar(OperacionEnum.GUARDAR, peli);
+
+            direccion = "admin-peliculas.jsp";
+            response.sendRedirect(direccion);
+
         } catch (BusinessException ex) {
             Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             out.close();
         }
+
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

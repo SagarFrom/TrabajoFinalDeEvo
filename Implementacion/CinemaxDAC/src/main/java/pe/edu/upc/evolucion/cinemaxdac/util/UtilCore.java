@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
  *
  * @author Victor Moran
  */
-public class UtilCore {
+public final class UtilCore {
     
     private UtilCore(){
     }
