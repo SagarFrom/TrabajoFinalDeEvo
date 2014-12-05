@@ -6,11 +6,18 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import pe.edu.upc.evolucion.cinemaxcore.base.BusinessException;
+import pe.edu.upc.evolucion.cinemaxcore.base.OperacionEnum;
+import pe.edu.upc.evolucion.cinemaxcore.business.ClienteBusiness;
+import pe.edu.upc.evolucion.cinemaxdac.dao.ClienteDao;
+import pe.edu.upc.evolucion.cinemaxdac.entity.Cliente;
 
 /**
  *
@@ -19,6 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/Controlador"})
 public class Controlador extends HttpServlet {
 
+    private final ClienteBusiness clienteBS = ClienteBusiness.obtenerEntidad();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,16 +41,27 @@ public class Controlador extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Controlador</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Controlador at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+           
+            String nombre = request.getParameter("txtNombre");
+            String tipo = request.getParameter("txtTipo");
+            String con1 = request.getParameter("txtCon1");
+            String con2 = request.getParameter("txtCon2");
+            
+            if(!con1.equals(con2))
+                response.sendRedirect("admin-usuarios.jsp");
+            
+            Cliente cliente = new Cliente();
+            cliente.setNombre(nombre);
+            cliente.setTipo(tipo);
+            cliente.setContrasenia(con1);
+            
+            ClienteBusiness clienteBS = ClienteBusiness.obtenerEntidad();
+            clienteBS.ejecutar(OperacionEnum.GUARDAR, cliente);
+            //if(cliente.getIdCliente()!=null)
+            response.sendRedirect("admin-usuarios.jsp");
+            
+        } catch (BusinessException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             out.close();
         }

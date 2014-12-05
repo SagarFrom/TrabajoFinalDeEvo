@@ -65,28 +65,35 @@
 			        <h1>Agregar Usuario</h1>
 			        <p>Ingrese los datos en el formulario.</p>
                                 <form class="form-horizontal"role="form" action="Controlador" method="post">
+                                    
+                                                    <div class="form-group">
+							    <label for="Codigo" class="col-sm-2 control-label">Código:</label>
+							    <div class="col-sm-4">
+                                                                <input type="text" class="form-control" id="nombre" name="txtCodigo" placeholder="">
+							    </div>
+						    </div>
 						    <div class="form-group">
 							    <label for="Nombre" class="col-sm-2 control-label">Nombres:</label>
 							    <div class="col-sm-4">
-							    	<input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre">
+                                                                <input type="text" class="form-control" id="nombre" name="txtNombre" placeholder="Ingrese el nombre">
 							    </div>
 						    </div>
 						    <div class="form-group">
 							    <label for="Tipo" class="col-sm-2 control-label">Tipo de usuario:</label>
 							    <div class="col-sm-4">
-							    	<input type="text" class="form-control" id="tipo" placeholder="Ingrese el tipo de usuario">
+                                                                <input type="text" class="form-control" id="tipo" name="txtTipo" placeholder="Ingrese el tipo de usuario">
 							    </div>
 						    </div>
 						    <div class="form-group">
 							    <label for="password" class="col-sm-2 control-label">Contraseña:</label>
 							    <div class="col-sm-4">
-                                                                <input type="password" class="form-control" id="contrasenia1" placeholder="Ingrese la contraseña">
+                                                                <input type="password" class="form-control" id="contrasenia1" name="txtCon1" placeholder="Ingrese la contraseña">
 							    </div>
 						    </div>
 						    <div class="form-group">
 							    <label for="password" class="col-sm-2 control-label">Contraseña</label>
 							    <div class="col-sm-4">
-							    	<input type="password" class="form-control" id="contrasenia2" placeholder="Repita la contraseña">
+                                                                <input type="password" class="form-control" id="contrasenia2" name="txtCon2" placeholder="Repita la contraseña">
 							    </div>
 						    </div>
 						  <button type="submit" class="btn btn-default">Agregar</button>

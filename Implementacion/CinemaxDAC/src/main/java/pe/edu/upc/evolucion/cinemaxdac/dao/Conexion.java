@@ -29,15 +29,10 @@ public class Conexion {
     protected ResultSet rs = null;
 
     protected Connection obtenerConexion() throws Exception {
-        if(obtenerPropiedad("conexion.pool").equalsIgnoreCase("1")){
-            Context ctx = new InitialContext();
-            DataSource ds = (DataSource) ctx.lookup("jdbc/Mysql");
-            return ds.getConnection();
-        }else{
-            Class.forName(obtenerPropiedad("conexion.jdbc"));
-            String url = MessageFormat.format("jdbc:mysql://{0}:{1}/{2}", obtenerPropiedad("conexion.server"),obtenerPropiedad("conexion.port"),obtenerPropiedad("conexion.bd"));
-            return (DriverManager.getConnection(url, obtenerPropiedad("conexion.usuario"), obtenerPropiedad("conexion.clave")));
-        }
+        Class.forName("com.mysql.jdbc.Driver");
+        String url = "jdbc:mysql://localhost:3306/mydb";
+        return (DriverManager.getConnection(url,"root", "root"));
+        
     }
 
     protected void cerrar(Connection connection) {
